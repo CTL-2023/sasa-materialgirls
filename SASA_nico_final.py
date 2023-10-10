@@ -70,7 +70,7 @@ def read_csv_file(file_directory, csv_name):
             Nothing: Prints error message
 
     Example:
-        >>> generate_system("/Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/", "coordinates.csv")
+        >>> read_csv_file("/Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/", "coordinates.csv")
         (3, 2, [[1, 0], [0.5, 0.7], [0.9, 0.2]])
     '''
     file_path = f"{file_directory}{csv_name}"
