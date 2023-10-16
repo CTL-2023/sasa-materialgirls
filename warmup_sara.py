@@ -30,6 +30,7 @@ def f(): #red line
         x1 == 0
         x2 == 0
 
+    ax.plot(x1, y1, x2, y2)
     ax.set_xlim(a, b)
     ax.set_ylim(c, d)
     ax.set_aspect('equal') #aspect ratio to ensure the half-circle appears as a half-circle
