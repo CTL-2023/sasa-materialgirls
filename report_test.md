@@ -27,3 +27,26 @@ The project aims to develop a codebase for the calculation of Solvent Accessible
             CSV file '/Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/coordinates.csv' with 100 columns 
             and 3 rows has been created.
         '''
+
+    read_csv_file(file_directory, csv_name):
+        '''
+        Reads the 'coordinates.csv'-file in the given directory and returns a nested list 'coordinates' with N entries, 
+        which each further contain D entries. Also returns D and N.
+
+        Args: 
+            file_directory: Directory of read csv-file
+            csv_name: File name
+
+        Returns:
+            If file exists and D is 2 or 3:
+                tuple: A tuple containing the following values:
+                    int: N
+                    int: D
+                    list: coordinates
+            Else:
+                Nothing: Prints error message
+
+        Example:
+            >>> read_csv_file("/Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/", "coordinates.csv")
+            (3, 2, [[1, 0], [0.5, 0.7], [0.9, 0.2]])
+        '''
