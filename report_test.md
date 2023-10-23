@@ -304,4 +304,59 @@ Draws the particles in a 2D-system as circles of radius 'R', with their position
             Plot has been saved as: /Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/plot_Kghz.png
         '''
 
-   
+## How To Run the Code
+Firstly, it's important to have Python installed (we used version 3.11.5), as well as the necessary libraries, from which numpy and matplotlib are not installed by default. Secondly, choose the according file directory where you want to save your files  by editing the file_directory constant:
+
+    file_directory = "/Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/" # Include your directory here, as separators, use / for mac, \\ for pc
+
+After that, you can run one of the functions or try one of the example uses, according to the 'applications' in the README.md.
+
+### Warmup
+    r1, r2, c1, c2 = 1.5, 0.5, 0, 1.2
+    area, arclength = warmup(r1, r2, c1, c2)
+    plot_warmup(r1, r2, c1, c2)
+    save_plot()
+    print(f'The area is {area:.3f}, the arc length is {arclength:.3f}.\n')
+    plt.show()
+
+### Application 1:
+    N, D, steps, S, R_max= 50, 3, 100, 10_000, 1
+    generate_system(N, D, file_directory, csv_name)
+    N, D, coordinates = read_csv_file(file_directory, csv_name)
+    V_fraction_against_R(steps, S, R_max, N, D, coordinates)
+    save_plot()
+    plt.show()
+
+### Application 2:
+    N, D, steps, S, R, r_max = 50, 3, 100, 10_000, 0.1, 1
+    generate_system(N, D, file_directory, csv_name)
+    N, D, coordinates = read_csv_file(file_directory, csv_name)
+    SASA_against_r(steps, R, S, r_max, N, D, coordinates)
+    save_plot()
+    plt.show()
+
+### Application 4:
+    N, D, R, r = 50, 2, 0.1, 0
+    generate_system(N, D, file_directory, csv_name)
+    N, D, coordinates = read_csv_file(file_directory, csv_name)
+    draw_system(R, r, N, D, coordinates)
+    save_plot()
+    plt.show()
+
+### Application 5:
+    N, D, steps, S, R_max= 50, 2, 100, 10_000, 1
+    generate_system(N, D, file_directory, csv_name)
+    N, D, coordinates = read_csv_file(file_directory, csv_name)
+    V_fraction_against_R(steps, S, R_max, N, D, coordinates)
+    save_plot()
+    plt.show()
+
+### Application 6:
+    N, D, R, r = 30, 2, 0.1, 0.05
+    generate_system(N, D, file_directory, csv_name)
+    N, D, coordinates = read_csv_file(file_directory, csv_name)
+    draw_system(R, r, N, D, coordinates)
+    save_plot()
+    plt.show()
+
+Press 'Run' to execute.
