@@ -37,7 +37,7 @@ def f(): #red line
                    print('kaka')
                    break
 
-    counter = 93
+    counter = 66
     print('hai',counter)                     
     for i in range(0,counter):
         x_finish.append(x1[i])
@@ -47,7 +47,7 @@ def f(): #red line
         x_finish.append(x2[j])
         y_finish.append(y2[j])
 
-    ax.plot(x_finish, y_finish)
+    ax.scatter(x_finish, y_finish)
     ax.set_xlim(a, b)
     ax.set_ylim(c, d)
     ax.set_aspect('equal') #aspect ratio to ensure the half-circle appears as a half-circle
