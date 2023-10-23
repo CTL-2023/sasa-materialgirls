@@ -1,6 +1,6 @@
 # Group Report: Solvent Accessible Surface Area (SASA) Calculation Project
 
-The project aims to develop a codebase for the calculation of Solvent Accessible Surface Area (SASA) in various scenarios, including 2D and 3D systems with overlapping spheres and circles of different radii, using a Monte-Carlo-approach. The prerequisites for the project are given in the according README.md: https://github.com/CTL-2023/sasa-materialgirls/blob/main/report.md
+The project aims to develop a codebase for the calculation of Solvent Accessible Surface Area (SASA) in various scenarios, including 2D and 3D systems with overlapping spheres and circles of different radii, using a Monte-Carlo-approach. The prerequisites for the project are given in the according README.md: https://github.com/CTL-2023/sasa-materialgirls/blob/main/README.md
 
 ## Layout of the Algorithm and Functions
 ### Generate System
