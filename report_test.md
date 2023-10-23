@@ -162,6 +162,7 @@ The area under the two conjoined semi-circles and their arc length are calculate
 
 ### Warmup Plot Function
 Prepares the plots for the semi-circles according to the function warmup().
+    
     plot_warmup(r1, r2, c1, c2):
         '''
         Args:
