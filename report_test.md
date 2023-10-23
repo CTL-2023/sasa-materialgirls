@@ -1,8 +1,6 @@
-Group report 
-
 # Group Report: Solvent Accessible Surface Area (SASA) Calculation Project
 
-The project aims to develop a codebase for the calculation of Solvent Accessible Surface Area (SASA) in various scenarios, including 2D and 3D systems with overlapping spheres and circles of different radii, using a Monte-Carlo-approach.
+The project aims to develop a codebase for the calculation of Solvent Accessible Surface Area (SASA) in various scenarios, including 2D and 3D systems with overlapping spheres and circles of different radii, using a Monte-Carlo-approach. The prerequisites for the project are given in the according README.md: https://github.com/CTL-2023/sasa-materialgirls/blob/main/report.md
 
 ## Layout of the Algorithm and Functions
 ### Generate System
@@ -162,7 +160,6 @@ The area under the two conjoined semi-circles and their arc length are calculate
 
 ### Warmup Plot Function
 Prepares the plots for the semi-circles according to the function warmup().
-    
     plot_warmup(r1, r2, c1, c2):
         '''
         Args:
@@ -310,7 +307,7 @@ Firstly, it's important to have Python installed (we used version 3.11.5), as we
 
     file_directory = "/Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/" # Include your directory here, as separators, use / for mac, \\ for pc
 
-After that, you can run one of the functions or try one of the example uses, according to the 'applications' in the README.md.
+After that, you can run one of the functions or try one of the example uses, according to the 'applications' in the README.md:
 
 ### Warmup
     r1, r2, c1, c2 = 1.5, 0.5, 0, 1.2
@@ -361,3 +358,5 @@ After that, you can run one of the functions or try one of the example uses, acc
     plt.show()
 
 Press 'Run' to execute.
+
+## Resulting Files
