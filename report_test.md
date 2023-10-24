@@ -145,10 +145,7 @@ Prepares the plots for the semi-circles according to the function warmup().
             Nothing: Plot is ready to be plotted
     '''
 
-### Plot the Volume Fraction Against Particle Radius (Application 1 & 5)
-To solve application 1, use: D = 2, N = 50, R_max = 1
-Application 5: D = 3, N = 50, R_max = 1
-
+### Plot the Volume Fraction Against Particle Radius
 Plots the volume/area fraction against the radius of the particles (R) from R = 0 to R = R_max. The number of steps between 0 and R_max is given by 'steps. It calculates the volume fraction using the Monte-Carlo-approach given with function estimate_volume_fraction() and compares it with the idealized values of the formula given by the function volume_fraction_formula().
 
     V_fraction_against_R(steps, S, R_max, N, D, coordinates):
@@ -169,9 +166,7 @@ Plots the volume/area fraction against the radius of the particles (R) from R = 
             volume_fraction_formula(N, R, D)
         '''
 
-### Plot SASA Against the Solvent Particle Radius (Application 2)
-Application 2: N = 50, R = 0.1, r_max = 1
-
+### Plot SASA Against the Solvent Particle Radius
 Plots the solvent accessible surface area (SASA) against the radius of solvent(!) particles (r) from r = 0 to r = r_max. It calculates SASA using the Monte-Carlo-approach given by the function SASA().
 
     SASA_against_r(steps, R, S, r_max, N, D, coordinates):
@@ -192,22 +187,11 @@ Plots the solvent accessible surface area (SASA) against the radius of solvent(!
             SASA(N, coordinates, R, r, D, S)
         '''
 
-### Plot the System (Application 4 & 6)
-Application 4: N = 0, R = 0.1, r = 0
-Application 6: N = 30, R = 0.1, r = 0.05
-
+### Plot the System
 Draws the particles in a 2D-system as circles of radius 'R', with their position according to the list 'coordinates'. It also draws the area that is closer to the circles than the solvent radius, 'r'. To apply the periodic boundary conditions, it does this nine times, translating to the according positions. The function also implements a rather sophisticated status message system.
 
     draw_system(R, r, N, D, coordinates):
         '''
-        Application 4: N = 0, R = 0.1, r = 0
-        Application 6: N = 30, R = 0.1, r = 0.05
-
-        Draws the particles in a 2D-system as circles of radius 'R', with their position according to the list 'coordinates.
-        It also draws the area that is closer to the circles than the solvent radius, 'r'.
-        To apply the periodic boundary conditions, it does this nine times, translating to the according positions.
-        The function also implements a rather sophisticated status message system.
-
         Args:
             R: Particle radius
             r: solvent particle radius
