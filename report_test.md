@@ -1,6 +1,6 @@
 # Group Report: Solvent Accessible Surface Area (SASA) Calculation Project
 
-The project aims to develop a codebase for the calculation of Solvent Accessible Surface Area (SASA) in various scenarios, including 2D and 3D systems with overlapping spheres and circles of different radii, using a Monte-Carlo-approach. The prerequisites for the project are given in the according [README](https://github.com/CTL-2023/sasa-materialgirls/blob/main/README.md). The code for the main task and a geometrical approach to the warmup exercise are given in the [final draft](https://github.com/CTL-2023/sasa-materialgirls/blob/main/SASA_nico_final.py).
+The project aims to develop a codebase for the calculation of Solvent Accessible Surface Area (SASA) in various scenarios, including 2D and 3D systems with overlapping spheres and circles of different radii, using a Monte-Carlo-approach. The prerequisites for the project are given in the according [README](https://github.com/CTL-2023/sasa-materialgirls/blob/main/README.md). The code for the main task and a geometrical approach to the warm-up exercise are given in the [final draft](https://github.com/CTL-2023/sasa-materialgirls/blob/main/SASA_nico_final.py).
 
 ## Layout of the Algorithm and Functions
 ### Generate System
@@ -158,7 +158,7 @@ The area under the two conjoined semi-circles and their arc length are calculate
             (3.719995978594346, 5.29165947685138)
         '''
 
-### Warmup Plot Function
+### Warm-Up Plot Function
 Prepares the plots for the semi-circles according to the function warmup().
     plot_warmup(r1, r2, c1, c2):
         '''
@@ -307,9 +307,12 @@ Firstly, it's important to have Python installed (we used version 3.11.5), as we
 
     file_directory = "/Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/" # Include your directory here, as separators, use / for mac, \\ for pc
 
-After that, you can run one of the functions or try one of the example uses, according to the 'applications' in the README.md:
+After that, you can run one of the functions or try one of the example uses, according to the 'applications' in the [README.md](https://github.com/CTL-2023/sasa-materialgirls/blob/main/README.md).
 
-### Warmup
+## Example Uses & Results
+Run one of the code snippets at the end of the code. The text in *italic* is copied unchanged from [README.md](https://github.com/CTL-2023/sasa-materialgirls/blob/main/README.md)
+
+### Warm-Up Exercise
     r1, r2, c1, c2 = 1.5, 0.5, 0, 1.2
     area, arclength = warmup(r1, r2, c1, c2)
     plot_warmup(r1, r2, c1, c2)
@@ -317,7 +320,13 @@ After that, you can run one of the functions or try one of the example uses, acc
     print(f'The area is {area:.3f}, the arc length is {arclength:.3f}.\n')
     plt.show()
 
+    >>> The area is 3.720, the arc length is 5.292.
+
+<img src="https://github.com/CTL-2023/sasa-materialgirls/blob/b1cc859bd5046319c6968ea1de20d346b79d8510/warmup.png" width=50%>
+
 ### Application 1:
+*Use the above functions to create systems with $N=50$ spheres of radius $R$ between $R=0$ and $R=1$. Verify the applicability of the 3D formula $\phi=1-\exp(-4\pi N R^3/3)$.*
+
     N, D, steps, S, R_max= 50, 3, 100, 10_000, 1
     generate_system(N, D, file_directory, csv_name)
     N, D, coordinates = read_csv_file(file_directory, csv_name)
@@ -325,7 +334,16 @@ After that, you can run one of the functions or try one of the example uses, acc
     save_plot()
     plt.show()
 
+    >>> 1 of 100 complete.
+    >>> ...
+    >>> 100 of 100 complete.
+    >>> Plot has been saved as: /Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/plot_o1Za.png
+
+<img src="https://github.com/CTL-2023/sasa-materialgirls/blob/b1cc859bd5046319c6968ea1de20d346b79d8510/app1.png" width=50%>
+
 ### Application 2:
+*Use the above functions to create a system with $N=50$ spheres of radius $R=0.1$, and plot SASA($r$) as function of $r$. SASA should decrease from a value smaller (why?) or equal to $A$ at $r=0$ to zero at $r=1$.*
+
     N, D, steps, S, R, r_max = 50, 3, 100, 10_000, 0.1, 1
     generate_system(N, D, file_directory, csv_name)
     N, D, coordinates = read_csv_file(file_directory, csv_name)
@@ -333,7 +351,16 @@ After that, you can run one of the functions or try one of the example uses, acc
     save_plot()
     plt.show()
 
+    >>> 1 of 100 complete.
+    >>> ...
+    >>> 100 of 100 complete.
+    >>> Plot has been saved as: /Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/plot_H9px.png
+
+<img src="https://github.com/CTL-2023/sasa-materialgirls/blob/b1cc859bd5046319c6968ea1de20d346b79d8510/app2.png" width=50%>
+
 ### Application 4:
+*Generate a 2D system with $N=50$ circles of radius $R=0.1$ and plot the configuration.*
+
     N, D, R, r = 50, 2, 0.1, 0
     generate_system(N, D, file_directory, csv_name)
     N, D, coordinates = read_csv_file(file_directory, csv_name)
@@ -341,7 +368,16 @@ After that, you can run one of the functions or try one of the example uses, acc
     save_plot()
     plt.show()
 
+    >>> 1 of 9 complete.
+    >>> ...
+    >>> 9 of 9 complete.
+    >>> Plot has been saved as: /Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/plot_kCZ0.png
+
+<img src="https://github.com/CTL-2023/sasa-materialgirls/blob/b1cc859bd5046319c6968ea1de20d346b79d8510/app4.png" width=50%>
+
 ### Application 5:
+*Verify the applicability of the 2D formula $\phi=1-\exp(-\pi N R^2)$.*
+
     N, D, steps, S, R_max= 50, 2, 100, 10_000, 1
     generate_system(N, D, file_directory, csv_name)
     N, D, coordinates = read_csv_file(file_directory, csv_name)
@@ -349,7 +385,16 @@ After that, you can run one of the functions or try one of the example uses, acc
     save_plot()
     plt.show()
 
+    >>> 1 of 100 complete.
+    >>> ...
+    >>> 100 of 100 complete.
+    >>> Plot has been saved as: /Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/plot_3nR6.png
+
+<img src="https://github.com/CTL-2023/sasa-materialgirls/blob/b1cc859bd5046319c6968ea1de20d346b79d8510/app5.png" width=50%>
+
 ### Application 6:
+*Generate a 2D system with $N=30$ circles of radius $R=0.1$ and plot the configuration as well as the region occupied by solvent particles of radius 0.05 that touch the surface of the filled region.*
+
     N, D, R, r = 30, 2, 0.1, 0.05
     generate_system(N, D, file_directory, csv_name)
     N, D, coordinates = read_csv_file(file_directory, csv_name)
@@ -357,31 +402,10 @@ After that, you can run one of the functions or try one of the example uses, acc
     save_plot()
     plt.show()
 
-Press 'Run' to execute.
-
-## Resulting Files
-### Application 1
-Use the above functions to create systems with $N=50$ spheres of radius $R$ between $R=0$ and $R=1$. Verify the applicability of the 3D formula $\phi=1-\exp(-4\pi N R^3/3)$.
-
-<img src="https://github.com/CTL-2023/sasa-materialgirls/blob/b1cc859bd5046319c6968ea1de20d346b79d8510/app1.png" width=50%>
-
-### Application 2
-Use the above functions to create a system with $N=50$ spheres of radius $R=0.1$, and plot SASA($r$) as function of $r$. SASA should decrease from a value smaller (why?) or equal to $A$ at $r=0$ to zero at $r=1$.
-
-<img src="https://github.com/CTL-2023/sasa-materialgirls/blob/b1cc859bd5046319c6968ea1de20d346b79d8510/app2.png" width=50%>
-
-### Application 4
-Generate a 2D system with $N=50$ circles of radius $R=0.1$ and plot the configuration. 
-
-<img src="https://github.com/CTL-2023/sasa-materialgirls/blob/b1cc859bd5046319c6968ea1de20d346b79d8510/app4.png" width=50%>
-
-### Application 5
-Verify the applicability of the 2D formula $\phi=1-\exp(-\pi N R^2)$.
-
-<img src="https://github.com/CTL-2023/sasa-materialgirls/blob/b1cc859bd5046319c6968ea1de20d346b79d8510/app5.png" width=50%>
-
-### Application 5
-Generate a 2D system with $N=30$ circles of radius $R=0.1$ and plot the configuration as well as the region occupied by solvent particles of radius 0.05 that touch the surface of the filled region.  
+    >>> 1 of 27 complete.
+    >>> ...
+    >>> 27 of 27 complete.
+    >>> Plot has been saved as: /Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/plot_fNqA.png
 
 <table>
   <tr>
@@ -389,3 +413,6 @@ Generate a 2D system with $N=30$ circles of radius $R=0.1$ and plot the configur
     <td><img src="https://github.com/CTL-2023/sasa-materialgirls/blob/b1cc859bd5046319c6968ea1de20d346b79d8510/app6_2.png" alt="Image 2"></td>
   </tr>
 </table>
+
+The figure on the left uses the parameters given by the readme file, the figure on the right is an example using differentb parameters.
+
