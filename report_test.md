@@ -241,7 +241,9 @@ Run one of the code snippets at the end of the code. The text in *italic* is cop
     save_plot()
     print(f'The area is {area:.3f}, the arc length is {arclength:.3f}.\n')
     plt.show()
-
+    
+    >>> Plot has been saved as: /Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/plot_9DvK.png
+    >>>
     >>> The area is 3.720, the arc length is 5.292.
 
 <img src="https://github.com/CTL-2023/sasa-materialgirls/blob/main/warmup.png" width=50%>
