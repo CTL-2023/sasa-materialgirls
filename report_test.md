@@ -203,7 +203,7 @@ Draws the particles in a 2D-system as circles of radius 'R', with their position
         '''
 
 ## How To Run the Code
-Firstly, it's important to have Python installed (we used version 3.11.5), as well as the necessary libraries, from which numpy and matplotlib are not installed by default. Secondly, choose the according file directory where you want to save your files  by editing the file_directory constant:
+Firstly, it's important to have Python installed (we used version 3.11.5), as well as the necessary libraries, from which matplotlib is not installed by default. Secondly, choose the according file directory where you want to save your files  by editing the file_directory constant:
 
     file_directory = "/Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/" # Include your directory here, as separators, use / for mac, \\ for pc
 
