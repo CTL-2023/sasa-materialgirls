@@ -5,7 +5,9 @@ import matplotlib.pyplot as plt
 import secrets
 import string
 import sys
+import numpy as np
 ax = plt.subplots()[1]
+pi = math.pi
 
 file_directory = "/Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/" # Include your directory here 
 csv_name = "coordinates.csv" # Choose your csv output file name here (as separators, use / for mac, \\ for pc)
@@ -234,7 +236,7 @@ def SASA(N, coordinates, R, r, D, S):
     O = S # Starts with assuming that all points are 'okay'
 
     if D == 3: # Checks if the dimension of the system is 3
-        A = N * 4 * math.pi * R**2 # Surface area of N non-touching (3D-)spheres with radius R
+        A = N * 4 * pi * R**2 # Surface area of N non-touching (3D-)spheres with radius R
         for _ in range(S): # Iterates the following S times
             center_point = coordinates[random.randint(0, N - 1)] # Chooses a random point from 'coordinates'
             vector = random_vector(R + r, D) # Defines a random 3D-vector of length R+r, using the according function
@@ -258,7 +260,7 @@ def SASA(N, coordinates, R, r, D, S):
                             #and O is decreased by 1
                     break
     elif D == 2: # Analogous to 3D-approach
-        A = N * math.pi * R**2
+        A = N * pi * R**2
         for _ in range(S):
             center_point = coordinates[random.randint(0, N - 1)]
             vector = random_vector(R + r, D)
@@ -297,9 +299,9 @@ def volume_fraction_formula(N, R, D):
         0.756762438562467
     '''
     if D == 2:
-        return 1 - math.exp(-N * math.pi * R**2)
+        return 1 - math.exp(-N * pi * R**2)
     elif D == 3:
-        return 1 - math.exp(-N * 4/3 * math.pi * R**3)
+        return 1 - math.exp(-N * 4/3 * pi * R**3)
     
 def save_plot():
     '''
@@ -350,7 +352,6 @@ def warmup(r1, r2, c1, c2):
     '''
     triangle_base = abs(c2 - c1) # Distance between circle centers, which is also the base of the
                                 #  triangle touching the contact point and the centers of the two semi-circles
-    pi = math.pi
 
     if triangle_base >= (r1 + r2): # Checks if the two circles are disjunct
         circles_area = pi/2 * (r1**2 + r2**2)
@@ -404,9 +405,10 @@ def plot_warmup(r1, r2, c1, c2):
     ax.add_patch(plt.Circle((c2, 0), r2, fill=False, color='black'))
     plt.scatter(c2, 0, color='black')
 
-    ax.set_ylim(0, max(r1, r2))
-    ax.set_xlim(min(c1-r1, c2-r2), max(c1+r1, c2+r2))
+    ax.set_ylim(0, max(r1, r2)*1.05)
+    ax.set_xlim(min(c1-r1, c2-r2)-0.05*max(r1, r2), max(c1+r1, c2+r2)+0.05*max(r1, r2))
     ax.set_aspect('equal')
+    plt.title(f'$r_1 = {r1:.2f},\; c_1 = {c1:.2f},\; r_2 = {r2:.2f},\; c_2 = {c2:.2f}$')
 
 def V_fraction_against_R(steps, S, R_max, N, D, coordinates):
     '''
@@ -512,7 +514,7 @@ def SASA_against_r(steps, R, S, r_max, N, D, coordinates):
     plt.ylabel('SASA')
     plt.title(f'{D}D-SASA-simulation with {N} particles of radius {R}')
 
-def draw_system(R, r, N, D, coordinates): # r = 0 for app.4, r > 0 for app.6
+def draw_system(R, r, N, D, coordinates):
     '''
     Application 4: N = 0, R = 0.1, r = 0
     Application 6: N = 30, R = 0.1, r = 0.05
@@ -541,7 +543,7 @@ def draw_system(R, r, N, D, coordinates): # r = 0 for app.4, r > 0 for app.6
         >>> plt.show()
         CSV file '/Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/coordinates.csv' with 2 columns and 30 rows has been created.
         1 of 18 complete.
-        ..
+        ...
         18 of 18 complete.
         Plot has been saved as: /Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/plot_Kghz.png
     '''
@@ -583,9 +585,9 @@ def draw_system(R, r, N, D, coordinates): # r = 0 for app.4, r > 0 for app.6
             transl_y = translate[j]
             for coord in coordinates:
                 x, y = coord
-                circle = plt.Circle((x + transl_x, y + transl_y), R, color='grey', fill=True, label='particle')
+                circle = plt.Circle((x + transl_x, y + transl_y), R + 0.003, color='black', fill=True, label='particle boundary')
                 ax.add_patch(circle)
-                circle = plt.Circle((x + transl_x, y + transl_y), R, color='black', fill=False, label='particle boundary')
+                circle = plt.Circle((x + transl_x, y + transl_y), R, color='grey', fill=True, label='particle')
                 ax.add_patch(circle)
             print(f'{i * 3 + j + total_steps - 8} of {total_steps} complete.')
 
