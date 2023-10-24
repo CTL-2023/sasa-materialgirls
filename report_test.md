@@ -176,12 +176,7 @@ Plots the solvent accessible surface area (SASA) against the radius of solvent(!
 
     SASA_against_r(steps, R, S, r_max, N, D, coordinates):
         '''
-        Application 2: N = 50, R = 0.1, r_max = 1
-
-        Plots the solvent accessible surface area (SASA) against the radius of solvent(!) particles (r) from r = 0 to r = r_max.
-        It calculates SASA using the Monte-Carlo-approach given by the function SASA().
-        
-        Args:
+       Args:
             steps: Number of steps to be plotted along the x-axis
             R: Particle radius
             S: Number of Monte-Carlo-'shots' that is fed into SASA()
