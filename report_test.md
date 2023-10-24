@@ -16,11 +16,6 @@ Creates a 'coordinates.csv' file in the given directory with D columns and N row
         
         Returns:
             Nothing: Saves generated CSV file in desired location and prints success prompt or prints error message
-        
-        Example:
-            >>> generate_system(3, 100, "/Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/", "coordinates.csv")
-            CSV file '/Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/coordinates.csv' with 100 columns 
-            and 3 rows has been created.
         '''
 
 ### Read CSV File
@@ -40,10 +35,6 @@ Reads the 'coordinates.csv'-file in the given directory and returns a nested lis
                     list: coordinates
             Else:
                 Nothing: Prints error message
-
-        Example:
-            >>> read_csv_file("/Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/", "coordinates.csv")
-            (3, 2, [[1, 0], [0.5, 0.7], [0.9, 0.2]])
         '''
 
 ### Estimate Volume/Area Fraction
@@ -60,10 +51,6 @@ Returns the volume/area-fraction of the randomly distributed particles with radi
             
         Returns: 
             float: Volume/Area fraction of the overlapping particles in the 1x1(x1) grit (between 0 and 1)
-        
-        Example:
-            >>> estimate_volume_fraction(2, 0.2, 1000, 2, [[0, 0.5], [0.5, 0.8]])
-            0.25132
         '''
 
 ### Generate Random Vector
@@ -77,12 +64,8 @@ Then outputs the vector as a list.
                 length: Vector length
                 D: Vector dimension
             
-            Returns:
-                list: Random D-dimensional vector of length 'length'
-            
-            Example:
-                >>> random_vector(0.5, 2)
-                [-0.20000000, 0.45825757]
+        Returns:
+                list: Random D-dimensional vector of length 'length
         '''
 
 ### Calculate SASA
@@ -103,10 +86,7 @@ This function returns the total solvent accessible surface area (SASA) of the sy
 
         Calls:
             random_vector(R+r, D): Is called to add a random vector of length R+r to a randomly chosen point of 'coordinates'
-
-        Example:
-            >>> SASA(2, [[0, 0.5], [0.5, 0.7]], 0.1, 0.1, 2, 1000)
-            1.256636
+        '''
 
 ### Volume/Area Fraction: Mathematical Formula
 Returns the volume/area fraction of the system using the appropriate formula.
@@ -120,10 +100,6 @@ Returns the volume/area fraction of the system using the appropriate formula.
         
         Returns:
             float: volume/area fraction
-        
-        Example:
-            >>> volume_fraction_formula(500, 0.3, 2)
-            0.756762438562467
         '''
 
 ### Save Plot
@@ -152,16 +128,13 @@ The area under the two conjoined semi-circles and their arc length are calculate
             tuple:
                 float: Total area of the two cojoined semi-circles
                 float: Total arc length
-
-        Example:
-            >>> warmup(1.5, 0.5, 0, 1.2)
-            (3.719995978594346, 5.29165947685138)
         '''
 
 ### Warm-Up Plot Function
 Prepares the plots for the semi-circles according to the function warmup().
+
     plot_warmup(r1, r2, c1, c2):
-        '''
+    '''
         Args:
             r1: Radius of first circle
             r2: Radius of second circle
@@ -170,17 +143,7 @@ Prepares the plots for the semi-circles according to the function warmup().
         
         Returns:
             Nothing: Plot is ready to be plotted
-        
-        Example:
-            >>> r1, r2, c1, c2 = 1.5, 0.5, 0, 1.2
-            >>> area, arclength = warmup(r1, r2, c1, c2)
-            >>> plot_warmup(r1, r2, c1, c2)
-            >>> save_plot()
-            >>> print(f'The area is {area:.3f}, the arc length is {arclength:.3f}.')
-            >>> plt.show()
-            Plot has been saved as: /Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/plot_yyC1.png
-            The area is 3.720, the arc length is 5.292.
-        '''
+    '''
 
 ### Plot the Volume Fraction Against Particle Radius (Application 1 & 5)
 To solve application 1, use: D = 2, N = 50, R_max = 1
@@ -204,20 +167,6 @@ Plots the volume/area fraction against the radius of the particles (R) from R = 
         Calls:
             estimate_volume_fraction(N, R, S, D, coordinates)
             volume_fraction_formula(N, R, D)
-        
-        Example:
-            >>> N, D = 500, 2
-            >>> generate_system(N, D, file_directory, csv_name)
-            >>> N, D, coordinates = read_csv_file(file_directory, csv_name)
-            >>> steps, S, R_max = 100, 10_000, 1
-            >>> V_fraction_against_R(steps, S, R_max, N, D, coordinates)
-            >>> save_plot()
-            >>> plt.show()
-            CSV file '/Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/coordinates.csv' with 2 columns and 500 rows has been created.
-            1 of 100 complete.   
-            ...
-            100 of 100 complete.
-            Plot has been saved as: /Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/plot_y1xC.png
         '''
 
 ### Plot SASA Against the Solvent Particle Radius (Application 2)
@@ -246,20 +195,6 @@ Plots the solvent accessible surface area (SASA) against the radius of solvent(!
         
         Calls:
             SASA(N, coordinates, R, r, D, S)
-        
-        Example:
-            >>> N, D = 50, 2
-            >>> generate_system(N, D, file_directory, csv_name)
-            >>> N, D, coordinates = read_csv_file(file_directory, csv_name)
-            >>> steps, S, R, r_max = 100, 10_000, 0.1, 0.2
-            >>> SASA_against_r(steps, R, S, r_max, N, D, coordinates)
-            >>> save_plot()
-            >>> plt.show()
-            CSV file '/Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/coordinates.csv' with 2 columns and 50 rows has been created.
-            1 of 100 complete.   
-            ...
-            100 of 100 complete.
-            Plot has been saved as: /Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/plot_7u3R.png
         '''
 
 ### Plot the System (Application 4 & 6)
@@ -287,19 +222,6 @@ Draws the particles in a 2D-system as circles of radius 'R', with their position
         
         Returns:
             Nothing: Creates plot and prints status or error messages
-        
-        Example:
-            >>> N, D, R, r = 30, 2, 0.1, 0.05
-            >>> generate_system(N, D, file_directory, csv_name)
-            >>> N, D, coordinates = read_csv_file(file_directory, csv_name)
-            >>> draw_system(R, r, N, D, coordinates)
-            >>> save_plot()
-            >>> plt.show()
-            CSV file '/Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/coordinates.csv' with 2 columns and 30 rows has been created.
-            1 of 18 complete.
-            ...
-            18 of 18 complete.
-            Plot has been saved as: /Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/plot_Kghz.png
         '''
 
 ## How To Run the Code
