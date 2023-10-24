@@ -363,22 +363,22 @@ Press 'Run' to execute.
 ### Application 1
 Use the above functions to create systems with $N=50$ spheres of radius $R$ between $R=0$ and $R=1$. Verify the applicability of the 3D formula $\phi=1-\exp(-4\pi N R^3/3)$.
 
-<img src="https://github.com/CTL-2023/sasa-materialgirls/blob/b1cc859bd5046319c6968ea1de20d346b79d8510/app1.png" width=100%>
+<img src="https://github.com/CTL-2023/sasa-materialgirls/blob/b1cc859bd5046319c6968ea1de20d346b79d8510/app1.png" width=50%>
 
 ### Application 2
 Use the above functions to create a system with $N=50$ spheres of radius $R=0.1$, and plot SASA($r$) as function of $r$. SASA should decrease from a value smaller (why?) or equal to $A$ at $r=0$ to zero at $r=1$.
 
-<img src="https://github.com/CTL-2023/sasa-materialgirls/blob/b1cc859bd5046319c6968ea1de20d346b79d8510/app2.png" width=100%>
+<img src="https://github.com/CTL-2023/sasa-materialgirls/blob/b1cc859bd5046319c6968ea1de20d346b79d8510/app2.png" width=50%>
 
 ### Application 4
 Generate a 2D system with $N=50$ circles of radius $R=0.1$ and plot the configuration. 
 
-<img src="https://github.com/CTL-2023/sasa-materialgirls/blob/b1cc859bd5046319c6968ea1de20d346b79d8510/app4.png" width=100%>
+<img src="https://github.com/CTL-2023/sasa-materialgirls/blob/b1cc859bd5046319c6968ea1de20d346b79d8510/app4.png" width=50%>
 
 ### Application 5
 Verify the applicability of the 2D formula $\phi=1-\exp(-\pi N R^2)$.
 
-<img src="https://github.com/CTL-2023/sasa-materialgirls/blob/b1cc859bd5046319c6968ea1de20d346b79d8510/app5.png" width=100%>
+<img src="https://github.com/CTL-2023/sasa-materialgirls/blob/b1cc859bd5046319c6968ea1de20d346b79d8510/app5.png" width=50%>
 
 ### Application 5
 Generate a 2D system with $N=30$ circles of radius $R=0.1$ and plot the configuration as well as the region occupied by solvent particles of radius 0.05 that touch the surface of the filled region.  
