@@ -414,5 +414,5 @@ Run one of the code snippets at the end of the code. The text in *italic* is cop
   </tr>
 </table>
 
-The figure on the left uses the parameters given by the readme file, the figure on the right is an example using differentb parameters.
+The figure on the left uses the parameters given by the readme file, the figure on the right is an example using different parameters.
 
