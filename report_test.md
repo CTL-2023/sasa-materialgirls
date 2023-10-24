@@ -4,7 +4,7 @@ The project aims to develop a codebase for the calculation of Solvent Accessible
 
 ## Layout of the Algorithm and Functions
 ### Generate System
-Creates a 'coordinates.csv' file in the given directory with D columns and N rows. Entries are random floats between 0 and 1, which act as the center points of the circular/spherical particles in the 1x1-square/1x1x1-cube. Finally, it prints if the process was succesful, otherwise it raises an error.
+Creates a 'coordinates.csv' file in the given directory with D columns and N rows. Entries are random floats between 0 and 1, which act as the center points of the circular/spherical particles in the 1x1-square/1x1x1-cube. Finally, it prints if the process was succesful, otherwise it raises an error. An example of a possible output file can be seen [here](https://github.com/CTL-2023/sasa-materialgirls/blob/main/data/coordinates.csv).
 
     generate_system(N, D, file_directory, csv_name)
         '''
@@ -54,7 +54,6 @@ Returns the volume/area-fraction of the randomly distributed particles with radi
         '''
 
 ### Generate Random Vector
-
 Generates a D-dimensional vector of a given length, pointing in a random direction. Here, the two approaches could probably also be generalized into one approach. It first checks the dimension of the vector, then generates three random floats between -1 and 1, then calculates the length of this first vector using Pythagoras and multiplies it by the desired length.
 Then outputs the vector as a list.
    
