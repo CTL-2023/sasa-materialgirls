@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 import secrets
 import string
 import sys
-import numpy as np
 ax = plt.subplots()[1]
 pi = math.pi
 
