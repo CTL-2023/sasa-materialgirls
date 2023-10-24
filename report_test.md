@@ -360,3 +360,4 @@ After that, you can run one of the functions or try one of the example uses, acc
 Press 'Run' to execute.
 
 ## Resulting Files
+<img src="https://github.com/CTL-2023/sasa-materialgirls/blob/b1cc859bd5046319c6968ea1de20d346b79d8510/app1.png" width=50%>
