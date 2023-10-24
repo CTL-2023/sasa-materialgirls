@@ -409,8 +409,8 @@ Run one of the code snippets at the end of the code. The text in *italic* is cop
 
 <table>
   <tr>
-    <td><img src="https://github.com/CTL-2023/sasa-materialgirls/blob/b1cc859bd5046319c6968ea1de20d346b79d8510/app6.png" alt="Image 1"></td>
-    <td><img src="https://github.com/CTL-2023/sasa-materialgirls/blob/b1cc859bd5046319c6968ea1de20d346b79d8510/app6_2.png" alt="Image 2"></td>
+    <td><img src="https://github.com/CTL-2023/sasa-materialgirls/blob/b1cc859bd5046319c6968ea1de20d346b79d8510/app6_2.png" alt="Image 1"></td>
+    <td><img src="https://github.com/CTL-2023/sasa-materialgirls/blob/b1cc859bd5046319c6968ea1de20d346b79d8510/app6.png" alt="Image 2"></td>
   </tr>
 </table>
 
