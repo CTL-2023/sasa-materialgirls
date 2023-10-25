@@ -1,6 +1,6 @@
 # Group Report: Solvent Accessible Surface Area (SASA) Calculation Project
 
-The project aims to develop a codebase for the calculation of Solvent Accessible Surface Area (SASA) in various scenarios, including 2D and 3D systems with overlapping spheres and circles of different radii, using a Monte-Carlo-approach. The prerequisites for the project are given in the according [README](https://github.com/CTL-2023/sasa-materialgirls/blob/main/README.md). The code for the main task and a geometrical approach to the warm-up exercise are given in the [final draft](https://github.com/CTL-2023/sasa-materialgirls/blob/main/SASA_nico_final.py).
+The project aims to develop a codebase for the calculation of Solvent Accessible Surface Area (SASA) in various scenarios, including 2D and 3D systems with overlapping spheres and circles of different radii, using a Monte-Carlo-approach. The prerequisites for the project are given in the according [README](https://github.com/CTL-2023/sasa-materialgirls/blob/main/README.md). The code for the main task and a geometrical approach to the warm-up exercise are given in the [final draft](https://github.com/CTL-2023/sasa-materialgirls/blob/main/final_draft.py).
 
 This code is designed to perform various simulations and calculations related to the packing and interaction of particles in two or three-dimensional space. The main functionalities and applications of this code include:
 
@@ -215,7 +215,7 @@ Draws the particles in a 2D-system as circles of radius 'R', with their position
         '''
 
 ## How to Run the Code
-Firstly, it's important to have Python installed (we used version 3.11.5), as well as the necessary libraries, from which matplotlib is not installed by default. Secondly, in the [final draft](https://github.com/CTL-2023/sasa-materialgirls/blob/main/SASA_nico_final.py), choose the according file directory where you want to save your files  by editing the file_directory constant:
+Firstly, it's important to have Python installed (we used version 3.11.5), as well as the necessary libraries, from which matplotlib is not installed by default. Secondly, in the [final draft](https://github.com/CTL-2023/sasa-materialgirls/blob/main/final_draft.py), choose the according file directory where you want to save your files  by editing the file_directory constant:
 
     file_directory = "/Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/" # Include your directory here, as separators, use / for mac, \\ for pc
 
