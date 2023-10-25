@@ -22,7 +22,7 @@ Creates a 'coordinates.csv' file in the given directory with D columns and N row
         '''
         Args:
             N: Number of lines in csv / Number of center points
-            D: Number of colums in csv / Number of dimensions in our simulation
+            D: Number of columns in csv / Number of dimensions in our simulation
             file_directory: Directory of saved csv-file
             csv_name: File name
         
