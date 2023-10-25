@@ -19,7 +19,7 @@ def generate_system(N, D, file_directory, csv_name):
 
     Args:
         N: Number of lines in csv / Number of center points
-        D: Number of colums in csv / Number of dimensions in our simulation
+        D: Number of columns in csv / Number of dimensions in our simulation
         file_directory: Directory of saved csv-file
         csv_name: File name
     
