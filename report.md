@@ -119,9 +119,9 @@ Saves a given plot and adds a randomly generated string as a file name attachmen
     save_plot():
         '''
         Example:
-            >>> plt.plot(x, y)
-            >>> save_plot()
-            Plot has been saved as: /Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/plot_yyC1.png
+            plt.plot(x, y)
+            save_plot()
+            >>> Plot has been saved as: /Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/plot_yyC1.png
         '''
 
 ### Warmup Exercise: A Geometrical Approach
