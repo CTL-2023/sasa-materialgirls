@@ -236,7 +236,7 @@ Run one of the code snippets at the end of the code. The text in *italic* is cop
     >>>
     >>> The area is 3.720, the arc length is 5.292.
 
-<img src="https://github.com/CTL-2023/sasa-materialgirls/blob/main/warmup.png" width=50%>
+<img src="https://github.com/CTL-2023/sasa-materialgirls/blob/main/data/warmup.png" width=50%>
 
 ### Application 1
 *Use the above functions to create systems with* $N=50$ *spheres of radius* $R$ *between* $R=0$ *and* $R=1$. *Verify the applicability of the 3D formula* $\phi=1-\exp(-4\pi N R^3/3)$.
