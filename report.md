@@ -253,7 +253,7 @@ Run one of the code snippets at the end of the code. The text in *italic* is cop
     >>> 100 of 100 complete.
     >>> Plot has been saved as: /Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/plot_o1Za.png
 
-<img src="https://github.com/CTL-2023/sasa-materialgirls/blob/main/data//app1.png" width=50%>
+<img src="https://github.com/CTL-2023/sasa-materialgirls/blob/main/data/app1.png" width=50%>
 
 ### Application 2
 *Use the above functions to create a system with* $N=50$ *spheres of radius* $R=0.1$, *and plot SASA(*$r$*) as function of* $r$. *SASA should decrease from a value smaller (why?) or equal to* $A$ *at* $r=0$ *to zero at* $r=1$.
@@ -270,7 +270,7 @@ Run one of the code snippets at the end of the code. The text in *italic* is cop
     >>> 100 of 100 complete.
     >>> Plot has been saved as: /Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/plot_H9px.png
 
-<img src="https://github.com/CTL-2023/sasa-materialgirls/blob/blob/main/data//app2.png" width=50%>
+<img src="https://github.com/CTL-2023/sasa-materialgirls/blob/main/data/app2.png" width=50%>
 
 ### Application 4
 *Generate a 2D system with* $N=50$ *circles of radius* $R=0.1$ *and plot the configuration.*
@@ -287,7 +287,7 @@ Run one of the code snippets at the end of the code. The text in *italic* is cop
     >>> 9 of 9 complete.
     >>> Plot has been saved as: /Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/plot_kCZ0.png
 
-<img src="https://github.com/CTL-2023/sasa-materialgirls/blob/blob/main/data//app4.png" width=50%>
+<img src="https://github.com/CTL-2023/sasa-materialgirls/blob/main/data/app4.png" width=50%>
 
 ### Application 5
 *Verify the applicability of the 2D formula* $\phi=1-\exp(-\pi N R^2)$.
@@ -304,7 +304,7 @@ Run one of the code snippets at the end of the code. The text in *italic* is cop
     >>> 100 of 100 complete.
     >>> Plot has been saved as: /Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/plot_3nR6.png
 
-<img src="https://github.com/CTL-2023/sasa-materialgirls/blob/blob/main/data//app5.png" width=50%>
+<img src="https://github.com/CTL-2023/sasa-materialgirls/blob/main/data/app5.png" width=50%>
 
 ### Application 6
 *Generate a 2D system with* $N=30$ *circles of radius* $R=0.1$ *and plot the configuration as well as the region occupied by solvent particles of radius 0.05 that touch the surface of the filled region.*
@@ -323,8 +323,8 @@ Run one of the code snippets at the end of the code. The text in *italic* is cop
 
 <table>
   <tr>
-    <td><img src="https://github.com/CTL-2023/sasa-materialgirls/blob/blob/main/data//app6_2.png" alt="Image 1"></td>
-    <td><img src="https://github.com/CTL-2023/sasa-materialgirls/blob/blob/main/data//app6.png" alt="Image 2"></td>
+    <td><img src="https://github.com/CTL-2023/sasa-materialgirls/blob/main/data/app6_2.png" alt="Image 1"></td>
+    <td><img src="https://github.com/CTL-2023/sasa-materialgirls/blob/main/data/app6.png" alt="Image 2"></td>
   </tr>
 </table>
 
