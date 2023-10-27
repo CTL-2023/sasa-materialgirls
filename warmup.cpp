@@ -62,7 +62,7 @@ void calculations() {
 }
 
 int main() {
-	getNumbers();
+    getNumbers();
     calculations();
     cout << "\nThe area is: " << circlesArea << ", the arclength is: " << arcLength << ".\n";
     main();
