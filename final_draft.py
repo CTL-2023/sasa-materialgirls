@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import secrets
 import string
 import sys
+from tqdm import tqdm
 ax = plt.subplots()[1]
 pi = math.pi
 
@@ -443,19 +444,16 @@ def V_fraction_against_R(steps, S, R_max, N, D, coordinates):
         >>> save_plot()
         >>> plt.show()
         CSV file '/Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/coordinates.csv' with 2 columns and 500 rows has been created.
-        1 of 100 complete.   
-        ...
-        100 of 100 complete.
+        Plotting V/A against r: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:05<00:00, 19.96it/s]
         Plot has been saved as: /Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/plot_y1xC.png
     '''
     x, y_script, y_formula = [], [], [] # Initializes the list for the x values and the according y-values
 
-    for i in range(steps): # Iterates 'R' in 'steps' steps from 0 to 'R_max'
+    for i in tqdm(range(steps), desc='Plotting V/A against r'): # Iterates 'R' in 'steps' steps from 0 to 'R_max'
         R = i * R_max / steps
         x.append(R)
         y_script.append(estimate_volume_fraction(N, R, S, D, coordinates))
         y_formula.append(volume_fraction_formula(N, R, D))
-        print(f'{i + 1} of {steps} complete.')
 
     plt.plot(x, y_script, label='Script')
     plt.plot(x, y_formula, label='Formula')
@@ -495,18 +493,15 @@ def SASA_against_r(steps, R, S, r_max, N, D, coordinates):
         >>> save_plot()
         >>> plt.show()
         CSV file '/Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/coordinates.csv' with 2 columns and 50 rows has been created.
-        1 of 100 complete.   
-        ...
-        100 of 100 complete.
+        Plotting SASA against r: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:03<00:00, 26.88it/s]
         Plot has been saved as: /Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/plot_7u3R.png
     '''
     x, y = [], []
 
-    for i in range(steps):
+    for i in tqdm(range(steps), desc='Plotting SASA against r'):
         r = i * r_max / steps
         x.append(r)
         y.append(SASA(N, coordinates, R, r, D, S))
-        print(f'{i + 1} of {steps} complete.')
 
     plt.plot(x, y, label='SASA')
     plt.xlabel('r_solvent')
@@ -521,7 +516,6 @@ def draw_system(R, r, N, D, coordinates):
     Draws the particles in a 2D-system as circles of radius 'R', with their position according to the list 'coordinates.
     It also draws the area that is closer to the circles than the solvent radius, 'r'.
     To apply the periodic boundary conditions, it does this nine times, translating to the according positions.
-    The function also implements a rather sophisticated status message system.
 
     Args:
         R: Particle radius
@@ -541,9 +535,9 @@ def draw_system(R, r, N, D, coordinates):
         >>> save_plot()
         >>> plt.show()
         CSV file '/Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/coordinates.csv' with 2 columns and 30 rows has been created.
-        1 of 18 complete.
-        ...
-        18 of 18 complete.
+        Plotting contact zone boundary: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:00<00:00, 16.39it/s]
+        Plotting contact zone: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:00<00:00, 17.07it/s]
+        Plotting particles: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:00<00:00,  8.52it/s]
         Plot has been saved as: /Users/nicol/Documents/Python_Projects/CTL_II/SASA/data/plot_Kghz.png
     '''
     translate = [-1, 0, 1]
@@ -552,9 +546,7 @@ def draw_system(R, r, N, D, coordinates):
         print('Error! D has to be set to 2.\n')
         sys.exit(1)
     elif r > 0: # Plots region occupied by solvent particles that touch the particles
-        total_steps = 27
-
-        for i in range(3):
+        for i in tqdm(range(3), desc='Plotting contact zone boundary'):
                     transl_x = translate[i]
                     for j in range(3):
                         transl_y = translate[j]
@@ -563,9 +555,8 @@ def draw_system(R, r, N, D, coordinates):
                             circle = plt.Circle((x + transl_x, y + transl_y), R + r + 0.003, color='black', fill=True,
                                                 label='Contact zone boundary')
                             ax.add_patch(circle)
-                        print(f'{i * 3 + j + 1} of {total_steps} complete.')
 
-        for i in range(3):
+        for i in tqdm(range(3), desc='Plotting contact zone'):
             transl_x = translate[i]
             for j in range(3):
                 transl_y = translate[j]
@@ -574,11 +565,8 @@ def draw_system(R, r, N, D, coordinates):
                     circle = plt.Circle((x + transl_x, y + transl_y), R + r, color='c', fill=True,
                                          label='Particle-solvent contact zone')
                     ax.add_patch(circle)
-                print(f'{i * 3 + j + 10} of {total_steps} complete.')
-    else:
-        total_steps = 9
 
-    for i in range(3): # Plots particles
+    for i in tqdm(range(3), desc='Plotting particles'): # Plots particles
         transl_x = translate[i]
         for j in range(3):
             transl_y = translate[j]
@@ -588,7 +576,6 @@ def draw_system(R, r, N, D, coordinates):
                 ax.add_patch(circle)
                 circle = plt.Circle((x + transl_x, y + transl_y), R, color='grey', fill=True, label='particle')
                 ax.add_patch(circle)
-            print(f'{i * 3 + j + total_steps - 8} of {total_steps} complete.')
 
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 1)
@@ -651,3 +638,11 @@ Application 6:
     save_plot()
     plt.show()
 '''
+
+if __name__ == "__main__":
+    N, D, R, r = 500, 2, 0.03, 0.01
+    generate_system(N, D, file_directory, csv_name)
+    N, D, coordinates = read_csv_file(file_directory, csv_name)
+    draw_system(R, r, N, D, coordinates)
+    save_plot()
+    plt.show()
